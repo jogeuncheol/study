@@ -22,7 +22,7 @@ string solution(string my_string)
     */
     for (int i = 0; i < my_string.length(); i++)
     {
-        answer.insert(0, my_string.substr(i, 1));
+        answer += string(n, my_string.at(i));
     }
     return answer;
 }
