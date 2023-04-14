@@ -4,6 +4,10 @@
 
 using namespace std;
 
+/**
+ * 실패율
+*/
+
 vector<int> solution(int N, vector<int> stages)
 {
     vector<int> answer;

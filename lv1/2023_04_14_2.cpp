@@ -4,6 +4,10 @@
 
 using namespace std;
 
+/**
+ * 추억 점수
+*/
+
 vector<int> solution(vector<string> name, vector<int> yearning, vector<vector<string>> photo)
 {
     vector<int> answer;
