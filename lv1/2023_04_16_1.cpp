@@ -12,22 +12,17 @@ int solution(int n, int m, vector<int> section)
 {
     int answer = 0;
 
-    vector<int> wall(n + 1, 1);
-    for (int s : section)
-        wall[s] = 0;
-    for (int i = section.front(); i <= n - m + 1; ++i)
+    for (int i = 0; i < section.size();)
     {
-        int paint = 0;
-        for (int j = i; j < i + m; ++j)
+        int p = section[i];
+        for (int j = i; j < section.size(); ++j)
         {
-            if (wall[j] == 0)
-            {
-                paint = 1;
-                wall[j] = 1;
-            }
+            if (section[i] - p < m)
+                i++;
+            else
+                break;
         }
-        if (paint)
-            answer++;
+        answer++;
     }
     return answer;
 }
