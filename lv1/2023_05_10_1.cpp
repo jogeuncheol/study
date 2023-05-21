@@ -27,31 +27,8 @@ vector<string> solution(vector<string> players, vector<string> callings)
 		name[key].emplace_back(answer[i]);
 		rank[i] = key;
 	}
-	// for (vector<int> p : player)
-	// {
-	// 	if (p.size() == 0) continue;
-	// 	for (int i : p)
-	// 	{
-	// 		cout << i << " ";
-	// 	}
-	// 	cout << endl;
-	// }
-	// for (vector<string> n : name)
-	// {
-	// 	if (n.size() == 0) continue;
-	// 	for (string s : n)
-	// 	{
-	// 		cout << s << " ";
-	// 	}
-	// 	cout << endl;
-	// }
 	for (int i = 0; i < callings.size(); ++i)
 	{
-		for (string a : answer)
-		{
-			cout << a << " ";
-		}
-		cout << "callings[i] : " << callings[i] << endl;
 		int key = 0;
 		for (char c : callings[i])
 			key += c;
@@ -80,27 +57,6 @@ vector<string> solution(vector<string> players, vector<string> callings)
 		swap(player[key][p_idx], player[prev_key][p_k_idx]);
 		swap(answer[idx], answer[prev_idx]);
 		swap(rank[idx], rank[prev_idx]);
-		// if (key == prev_key) // player[key].size() > 1
-		// {
-		// 	swap(player[key][p_idx], player[key][p_idx - 1]);
-		// 	// swap(name[key][p_idx], name[key][p_idx - 1]);
-		// }
-		// else
-		// {
-		// 	int i = 0;
-		// 	if (player[prev_key].size() > 1)
-		// 	{
-		// 		for (; i < name[prev_key].size(); ++i)
-		// 		{
-		// 			if (!name[prev_key][i].compare(answer[idx - 1]))
-		// 				i = player[prev_key][i];
-		// 				break;
-		// 		}
-		// 	}
-		// 	swap(player[key][p_idx], player[prev_key][i]);
-		// }
-		// swap(answer[idx], answer[idx - 1]);
-		// swap(rank[idx], rank[idx - 1]);
 	}
 	return answer;
 }
