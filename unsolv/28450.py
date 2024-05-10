@@ -5,6 +5,7 @@ class ConventionalDead:
         self.n = 0
         self.m = 0
         self.H = 0
+        self.other_ways = []
 
         self.solution_input()
 
@@ -48,7 +49,7 @@ class ConventionalDead:
             if hp - self.map[y][x] < 0:
                 return
             value = self.map[y][x]
-            # self.map[y][x] = -1
+            self.map[y][x] = -1
             right_value = self.map[y][x + 1] if x + 1 < self.m else -1
             down_value = self.map[y + 1][x] if y + 1 < self.n else -1
             if right_value != -1 and down_value != -1:
@@ -68,7 +69,8 @@ class ConventionalDead:
                 self.f([y + 1, x], hp - value, hh + value)
                 if 0 in self.answers:
                     return
-            # self.map[y][x] = value
+            if not value:
+                self.map[y][x] = value
 
     def solution(self):
         position = [0, 0]
